@@ -1,0 +1,27 @@
+{
+  "name": "mortgages-by-ram",
+  "version": "1.0.0",
+  "description": "Mortgages by Ram - Professional mortgage services website",
+  "private": true,
+  "scripts": {
+    "setup": "cd server && yarn install && cd ../client && yarn install",
+    "dev": "concurrently \"cd server && yarn develop\" \"cd client && yarn dev\"",
+    "dev:server": "cd server && yarn develop",
+    "dev:client": "cd client && yarn dev",
+    "build": "cd client && yarn build",
+    "update-content": "node update-mortgage-content.js",
+    "seed": "cd server && yarn strapi import -f ../seed-data.tar.gz"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "keywords": [
+    "mortgage",
+    "toronto",
+    "strapi",
+    "react-router",
+    "cms"
+  ],
+  "author": "Ali Shafique @ Social Dots",
+  "license": "MIT"
+}

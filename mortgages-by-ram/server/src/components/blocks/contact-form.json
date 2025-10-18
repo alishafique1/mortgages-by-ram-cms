@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_blocks_contact_forms",
+  "info": {
+    "displayName": "Contact Form",
+    "description": "Contact form for lead capture"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "required": true,
+      "default": "Book Your Free Consultation"
+    },
+    "subheading": {
+      "type": "text"
+    },
+    "buttonText": {
+      "type": "string",
+      "default": "Book Now"
+    },
+    "showPhone": {
+      "type": "boolean",
+      "default": true
+    },
+    "showMessage": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}
+

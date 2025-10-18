@@ -1,0 +1,8 @@
+# Robots.txt for Mortgages by Ram - Toronto Mortgage Agent
+# This file is overridden by the client-side robots.txt.tsx route
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://mortgagesbyram.com/sitemap.xml

@@ -1,0 +1,70 @@
+{
+  "kind": "collectionType",
+  "collectionName": "form_submissions",
+  "info": {
+    "singularName": "form-submission",
+    "pluralName": "form-submissions",
+    "displayName": "Form Submission",
+    "description": "Contact form and pre-approval submissions"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "phone": {
+      "type": "string"
+    },
+    "message": {
+      "type": "text"
+    },
+    "propertyValue": {
+      "type": "string"
+    },
+    "downPayment": {
+      "type": "string"
+    },
+    "employmentStatus": {
+      "type": "enumeration",
+      "enum": [
+        "employed",
+        "self-employed",
+        "contract",
+        "retired",
+        "other"
+      ]
+    },
+    "formType": {
+      "type": "enumeration",
+      "enum": [
+        "pre-approval",
+        "contact",
+        "general"
+      ],
+      "default": "contact"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "new",
+        "contacted",
+        "in-progress",
+        "completed",
+        "archived"
+      ],
+      "default": "new"
+    },
+    "notes": {
+      "type": "text"
+    }
+  }
+}
+
