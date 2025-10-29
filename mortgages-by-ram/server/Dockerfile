@@ -28,14 +28,18 @@ RUN mkdir -p /app/.tmp/data && \
 
 WORKDIR /app
 
-# Copy package files
+# Copy package files to root (needed for Strapi to find package.json)
 COPY ./package.json package-lock.json* yarn.lock* /app/
 
 # Copy production dependencies
 COPY --from=production-dependencies-env /app/node_modules /app/node_modules
 
-# Copy built files
-COPY --from=build-env /app/dist /app/dist
+# Copy built files - Strapi expects config, src in specific locations
+# We copy FROM dist's subdirectories TO /app root to maintain expected structure
+COPY --from=build-env /app/dist/config /app/config
+COPY --from=build-env /app/dist/src /app/src
+COPY --from=build-env /app/dist/index.js /app/index.js
+COPY --from=build-env /app/dist/tsconfig.tsbuildinfo /app/tsconfig.tsbuildinfo
 COPY --from=build-env /app/public /app/public
 
 # Set permissions for uploads and database directories
