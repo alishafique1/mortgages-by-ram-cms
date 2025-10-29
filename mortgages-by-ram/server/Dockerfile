@@ -1,7 +1,7 @@
 FROM node:20-alpine AS development-dependencies-env
 COPY . /app
 WORKDIR /app
-RUN npm ci
+RUN yarn install --frozen-lockfile
 
 FROM node:20-alpine AS production-dependencies-env
 COPY ./package.json package-lock.json* yarn.lock* /app/
@@ -14,7 +14,7 @@ FROM node:20-alpine AS build-env
 COPY . /app/
 COPY --from=development-dependencies-env /app/node_modules /app/node_modules
 WORKDIR /app
-RUN npm run build
+RUN yarn build
 
 FROM node:20-alpine
 
@@ -56,5 +56,5 @@ HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=3 \
 ENTRYPOINT ["dumb-init", "--"]
 
 # Start the application
-CMD ["npm", "run", "start"]
+CMD ["yarn", "start"]
 
