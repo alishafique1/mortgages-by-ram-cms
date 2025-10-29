@@ -37,7 +37,6 @@ COPY --from=production-dependencies-env /app/node_modules /app/node_modules
 # Copy built files
 COPY --from=build-env /app/dist /app/dist
 COPY --from=build-env /app/public /app/public
-COPY --from=build-env /app/config /app/config
 
 # Set permissions for uploads and database directories
 RUN chown -R node:node /app
