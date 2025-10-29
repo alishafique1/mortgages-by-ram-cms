@@ -15,51 +15,41 @@ A professional mortgage agent website built with React Router 7 and Strapi 5, in
 - Node.js 18+ and Yarn
 - Basic knowledge of React and Strapi
 
-### Installation
+### Installation & Run
 
 ```bash
-# Navigate to project
-cd mortgages-by-ram
-
-# Install dependencies (both server and client)
+# Install dependencies (first time only)
 yarn setup
 
-# Start development servers
+# Start both frontend and backend
 yarn dev
 ```
 
 **Access Points:**
 - Frontend: http://localhost:5173
 - Strapi Admin: http://localhost:1337/admin
+- API: http://localhost:1337/api
 
 ---
 
-## 📋 Content Setup
+## 📋 Content Setup (Optional)
 
-You have two options to set up your content:
+Use the automated script to populate your website with sample content:
 
-### Option 1: Automated Script (5 minutes) ⚡
+```bash
+# 1. Get API token from Strapi admin (Settings → API Tokens)
+# 2. Update token in update-mortgage-content.js
+# 3. Run:
+yarn update-content
+```
 
-1. Get your API token from Strapi admin (Settings → API Tokens)
-2. Update the token in `update-mortgage-content.js`
-3. Run: `yarn update-content`
-
-**This will automatically:**
-- Update global settings
-- Update landing page content
-- Create 9 pages (About, Contact, Services, Legal)
-
-### Option 2: Manual Setup (2-3 hours) 📝
-
-Follow the step-by-step guide in `MANUAL-CONTENT-UPDATE.md`
+This creates sample pages and content blocks you can customize in Strapi admin.
 
 ---
 
 ## 📚 Documentation
 
-- **[CONTENT-UPDATE-GUIDE.md](./CONTENT-UPDATE-GUIDE.md)** - How to use the automated script
-- **[MANUAL-CONTENT-UPDATE.md](./MANUAL-CONTENT-UPDATE.md)** - Manual content update guide
-- **[IMPLEMENTATION-SUMMARY.md](./IMPLEMENTATION-SUMMARY.md)** - Complete implementation details
+- **[PLAN.md](./PLAN.md)** - Complete project status, roadmap, and customization guide
 
 ---
 
@@ -70,24 +60,108 @@ Follow the step-by-step guide in `MANUAL-CONTENT-UPDATE.md`
 - ✨ Modern animations and hover effects
 - ✨ Fully responsive (mobile-first)
 - ✨ Professional color scheme (Slate + Blue)
-- ✨ Clean typography using Inter font
 
 ### Content
 - 📄 Dynamic landing page with customizable blocks
 - 📄 Blog/articles system
 - 📄 Service pages (First-time buyers, Refinancing, etc.)
-- 📄 Legal pages (Privacy, Terms, Disclaimer)
-- 📄 Contact page with information
+- 📄 Optional AI chatbot (OpenAI GPT-4o-mini)
 
 ### Technical
 - ⚡ React 19 with React Router 7
 - ⚡ Server-side rendering (SSR)
 - ⚡ Strapi 5 headless CMS
-- ⚡ TypeScript for type safety
-- ⚡ Tailwind CSS 4 + Shadcn UI
+- ⚡ TypeScript + Tailwind CSS 4
 - ⚡ SEO optimized
 
 ---
+
+## 📱 Available Scripts
+
+```bash
+yarn dev              # Run both frontend and backend
+yarn dev:server       # Run only Strapi backend
+yarn dev:client       # Run only React frontend
+yarn setup            # Install all dependencies
+yarn update-content   # Run content update script
+yarn build            # Build for production
+```
+
+---
+
+## 🏗️ Project Structure
+
+```
+mortgages-by-ram/
+├── client/           # React Router 7 Frontend
+│   └── app/
+│       ├── components/
+│       ├── routes/
+│       └── contexts/
+├── server/           # Strapi 5 Backend
+│   └── src/
+├── PLAN.md          # Project roadmap & status
+├── README.md        # This file
+└── update-mortgage-content.js
+```
+
+---
+
+## 📊 Tech Stack
+
+| Technology | Version | Purpose |
+|------------|---------|---------|
+| React | 19 | UI framework |
+| React Router | 7 | Routing & SSR |
+| TypeScript | 5.8 | Type safety |
+| Tailwind CSS | 4 | Styling |
+| Strapi | 5 | Headless CMS |
+| SQLite | - | Database (dev) |
+
+---
+
+## 🎯 Inspired By
+
+This project is inspired by [Grow With Nav](https://www.growwithnav.com/), featuring:
+- Bold, impactful headlines
+- First-time home buyer focus
+- Trust-building messaging
+- Professional yet approachable tone
+
+---
+
+## ✅ Pre-Launch Checklist
+
+- [ ] Run content update script
+- [ ] Publish all content in Strapi
+- [ ] Add professional images
+- [ ] Update contact information
+- [ ] Test all navigation links
+- [ ] Set up domain and hosting
+
+See **[PLAN.md](./PLAN.md)** for complete customization guide.
+
+---
+
+## 📞 Support
+
+**Created by:** Ali Shafique @ Social Dots  
+**Project:** Mortgages by Ram  
+**Date:** October 2025
+
+---
+
+## 📄 License
+
+MIT License
+
+---
+
+**Ready to get started?**
+
+```bash
+yarn setup && yarn dev
+```
 
 ## 🏗️ Project Structure
 
