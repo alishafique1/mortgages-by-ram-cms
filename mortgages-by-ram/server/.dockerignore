@@ -6,10 +6,12 @@ npm-debug.log
 .git
 .gitignore
 .cache
-build
+.tmp
 dist
+build
 coverage
 .DS_Store
 *.md
 .vscode
 .idea
+
